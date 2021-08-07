@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .balck{
+        background: black;
+        height: 500px;
+        width: 500px;
+        border-radius: 20px;
+    }
+    .menu{
+        display: flex;
+        justify-content: space-around;
+        padding-top: 30px;
+    }
+    .menu li{
+        width: 100px;
+        background:yellow;
+        padding: 10px;
+    }
+    
+    .menu li a{
+        text-decoration: none;
+        color: black;
+    }
+       
+</style>
+<body>
+    <div class="balck">
+        <ul class="menu">
+            <li><a class="number" href="#">I love Coding</a></li>
+            <li><a  class="number" href="#">I love Coding</a></li>
+            <li><a  class="number" href="#">I love Coding</a></li>
+        </ul>
+        <div class="test2">
+      
+                <input id="inputValue" type="text" placeholder="number" name="number"></input>
+           <button type="button" onclick=" textChange();" > Change text</button>
+           
+        </div>
+    </div>
+    
+</body>
+<script>
+    function textChange(){
+        var tag=document.querySelectorAll(".number");
+    var value=document.getElementById("inputValue").value;
+     tag.forEach((element,index)=>{
+         element.innerHTML=value;
+     })
+   
+    }
+    var a="XYZ123abc";
+
+var arr=[];
+function reverse(){
+    var b="";
+    for (i=a.length-1,j=0; i>=0,j<=a.length;i--,j++){
+        b=b+a[i];
+    }
+    
+    return b;
+}
+console.log(reverse())
+
+</script>
+</html>
+
+ 
