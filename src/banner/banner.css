@@ -1,0 +1,69 @@
+.banner{
+    background: url(./banner.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 250px;
+    padding-bottom: 250px;
+    margin-bottom: 5rem;
+}
+.SearchOptions {
+    background:rgba(255, 255, 255, 0.623);
+    height: 34px;
+    width: 278px;
+    display: flex;
+    justify-content: space-around;
+    padding-top: 5px;
+    border-radius: 10px;
+}
+.SearchOptions a{
+    color: black;
+}
+.banner-form input{
+    border: none;
+    background: transparent;
+}
+.banner-form {
+    background:#ffff;
+    width: 500px;
+    height: 40px;
+    border-radius: 10px;
+    padding-left: 10px;
+    position: relative;
+}
+.fa-bars, .fa-search{
+    position: absolute;
+    right:5px;
+    top:10px;
+}
+.Ad,.banner-form{
+    display: inline-block;
+}
+.Ad{
+    margin-left: 40px;
+    background: rgba(255, 255, 255, 0.623);
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    border-radius: 20px;
+}
+.Ad a{
+    color: black;
+   
+}
+.banner-text h3{
+    font-size: 59px;
+    color: #ffff;
+}
+.banner-text p{
+    font-size: 40px;
+    color: #ffff;
+}
+.ban-text h3{
+    font-size: 18px;
+}
+.ban-paragraph{
+    padding-top: 3rem;
+    padding-bottom: 5rem;
+}

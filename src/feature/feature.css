@@ -1,0 +1,21 @@
+.feature-text{
+    border-bottom: 1px solid grey;
+}
+.feauture-image{
+    border-radius: 10px;
+}
+.feauture-image img{
+    border-radius: 10px;
+}
+.feauture-linkImage,.feauture-links{
+    display: inline-block;
+}
+
+.feauture-linkImage img{
+    height: 24px;
+    width: 24px;
+}
+.feauture-text h3{
+ color: blue;
+}
+    
