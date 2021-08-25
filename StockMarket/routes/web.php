@@ -15,3 +15,4 @@ use Illuminate\Support\Facades\Route;
 Route::get('/','App\Http\Controllers\Stock@StockTable');
 Route::get('/fromJson','App\Http\Controllers\StockController@create');
 Route::get('/fromSqlServer','App\Http\Controllers\StockController@index');
+Route::get('/delete/{id}', 'App\Http\Controllers\StockController@destroy');

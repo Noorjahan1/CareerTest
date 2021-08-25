@@ -113,8 +113,10 @@ class StockController extends Controller
      * @param  \App\Models\stock  $stock
      * @return \Illuminate\Http\Response
      */
-    public function destroy(stock $stock)
-    {
-        //
+    public function destroy( $stock)
+    {   
+        DB::table('stocks')->where('id', '=', $stock)->delete();
+        return redirect()->action([StockController::class, 'index']);
+        // echo ("deleted");
     }
 }

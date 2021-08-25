@@ -11,6 +11,7 @@
    <table class="table table-bordered table-dark">
   <thead>
     <tr>
+      <th scope="col">id</th>
       <th scope="col">date</th>
       <th scope="col">trade_code</th>
       <th scope="col">high</th>
@@ -27,6 +28,7 @@
     @foreach ($stocks as $key => $stock)
     <tr>
         
+     <td>{{ $stock->id }}</td>
      <td>{{ $stock->date }}</td>
      <td>{{ $stock->trade_code }}</td>
      <td>{{ $stock->high}}</td>
@@ -34,7 +36,7 @@
      <td>{{ $stock->low }}</td>
      <td>{{ $stock->close }}</td>
      <td>{{ $stock->volume}}</td>
-     <td><a href="#"class="btn btn-danger"> Delete</a></td>    
+     <td><a href="{{url('delete',$stock->id)}}"class="btn btn-danger"> Delete</a></td>    
     </tr>
     @endforeach
   </tbody>
