@@ -15,9 +15,10 @@ class StockController extends Controller
     public function index()
     {
          $stock = DB::table('stocks')->get();
+         $data=$stock;
          if(!($stock->isEmpty())){
             
-              return view('Table',['stocks'=>$stock]);
+              return view('Table',['stocks'=>$stock,"lineChart"=>$data]);
          }else{
            return view('PopulateD');
          }
@@ -73,7 +74,29 @@ class StockController extends Controller
      */
     public function store(Request $request)
     {
-        //
+          DB::table('stocks')->upsert([
+                    ['date' =>$request->input("date"), 
+                    'trade_code' => $request->input("trade_code"),
+                     'high' =>$request->input("high"),
+                    'open' =>$request->input("open"),
+                    'low' =>$request->input("low"),
+                    'close' =>$request->input("close"),
+                    'volume' =>$request->input("volume"),
+                     
+                    ],
+                   
+                      ], ['date', 
+                     'trade_code',
+                     'high',
+                     'open',
+                     'low',
+                     'close',
+                     'volume'
+
+                      ]
+                      
+                      );    
+        return redirect()->action([StockController::class, 'index']);
     }
 
     /**
@@ -82,9 +105,10 @@ class StockController extends Controller
      * @param  \App\Models\stock  $stock
      * @return \Illuminate\Http\Response
      */
-    public function show(stock $stock)
+    public function show()
     {
         //
+        return view('New');
     }
 
     /**

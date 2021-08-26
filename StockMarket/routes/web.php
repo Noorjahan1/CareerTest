@@ -17,4 +17,6 @@ Route::get('/fromJson','App\Http\Controllers\StockController@create');
 Route::get('/fromSqlServer','App\Http\Controllers\StockController@index');
 Route::get('/delete/{id}', 'App\Http\Controllers\StockController@destroy');
 Route::post('/edit/{id}', 'App\Http\Controllers\StockController@update');
+Route::post('/store', 'App\Http\Controllers\StockController@store');
 Route::get("/editItem/{id}","App\Http\Controllers\StockController@edit");
+Route::get("/new","App\Http\Controllers\StockController@show");
