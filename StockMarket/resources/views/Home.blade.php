@@ -8,6 +8,7 @@
     <title>Document</title>
 </head>
 <body>
+  <a href="{{url('fromSqlServer')}}" class="btn btn-warning">Edit</a>
    <table class="table table-bordered table-dark">
   <thead>
     <tr>

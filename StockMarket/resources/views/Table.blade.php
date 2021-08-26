@@ -36,6 +36,7 @@
      <td>{{ $stock->low }}</td>
      <td>{{ $stock->close }}</td>
      <td>{{ $stock->volume}}</td>
+     <td><a href="{{url('editItem',$stock->id)}}"class="btn btn-primary"> Edit</a></td>
      <td><a href="{{url('delete',$stock->id)}}"class="btn btn-danger"> Delete</a></td>    
     </tr>
     @endforeach

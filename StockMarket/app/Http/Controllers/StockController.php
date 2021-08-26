@@ -18,6 +18,8 @@ class StockController extends Controller
          if(!($stock->isEmpty())){
             
               return view('Table',['stocks'=>$stock]);
+         }else{
+           return view('PopulateD');
          }
     }
 
@@ -57,6 +59,7 @@ class StockController extends Controller
                       
                       );    
              }
+         return redirect()->action([StockController::class, 'index']);
         }
        
         //
@@ -90,9 +93,11 @@ class StockController extends Controller
      * @param  \App\Models\stock  $stock
      * @return \Illuminate\Http\Response
      */
-    public function edit(stock $stock)
+    public function edit($id)
     {
-        //
+      $stock = DB::table('stocks')->where('id', '=', $id)->first();
+      
+    return view('EditForm',['stock'=>$stock]);
     }
 
     /**
@@ -102,9 +107,22 @@ class StockController extends Controller
      * @param  \App\Models\stock  $stock
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, stock $stock)
+    public function update(Request $request,  $stock)
     {
-        //
+
+          DB::table('stocks')
+              ->where('id',$stock)
+              ->update([ 'date'=>$request["date"], 
+                     'trade_code'=> $request["trade_code"],
+                     'high'=>$request["high"],
+                     'open'=>$request["open"],
+                     'low'=>$request["low"],
+                     'close'=>$request["close"],
+                     'volume'=>$request["volume"]
+
+              ]);
+        
+            return redirect()->action([StockController::class, 'index']); 
     }
 
     /**
